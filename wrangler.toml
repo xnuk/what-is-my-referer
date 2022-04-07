@@ -1,0 +1,18 @@
+compatibility_date = '2022-04-07'
+
+name = 'what-is-my-referer'
+type = 'javascript'
+workers_dev = true
+
+[build]
+command = 'deno bundle index.ts dist/index.js'
+watch_dir = '.'
+
+[build.upload]
+format = 'modules'
+dir = 'dist'
+main = './index.js'
+
+[[build.upload.rules]]
+type = 'ESModule'
+globs = ['**/*.js', '**/*.mjs']
